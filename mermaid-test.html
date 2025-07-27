@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mermaid Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .mermaid {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    .summary {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mermaid Flowchart Test</h1>
+  
+  <div class="summary">
+    <strong>Summary:</strong> This flowchart represents the comprehensive machine learning approach for NLP tasks, showing the pipeline from data collection through preprocessing, feature extraction, model training, evaluation, and deployment.
+  </div>
+  
+  <div class="mermaid">
+flowchart TD
+  A[Data Collection] --> B[Preprocessing]
+  B --> C[Feature Extraction]
+  C --> D[Model Training]
+  D --> E[Evaluation]
+  E --> F{Performance\nSatisfactory?}
+  F -->|Yes| G[Deploy Model]
+  F -->|No| H[Hyperparameter Tuning]
+  H --> D
+  </div>
+  
+  <h2>Emoji Suggestions</h2>
+  <ul>
+    <li><strong>A:</strong> 📊</li>
+    <li><strong>B:</strong> 🧹</li>
+    <li><strong>C:</strong> 🔍</li>
+    <li><strong>D:</strong> 🧠</li>
+    <li><strong>E:</strong> 📈</li>
+    <li><strong>F:</strong> ❓</li>
+    <li><strong>G:</strong> 🚀</li>
+    <li><strong>H:</strong> ⚙️</li>
+  </ul>
+</body>
+</html>
+    

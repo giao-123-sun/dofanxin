@@ -1,0 +1,51 @@
+{
+  "mermaid": "flowchart TD\n  A[Data Collection] --> B[Preprocessing]\n  B --> C[Feature Extraction]\n  C --> D[Model Training]\n  D --> E[Evaluation]\n  E --> F{Performance\\nSatisfactory?}\n  F -->|Yes| G[Deploy Model]\n  F -->|No| H[Hyperparameter Tuning]\n  H --> D",
+  "summary": "This flowchart represents the comprehensive machine learning approach for NLP tasks, showing the pipeline from data collection through preprocessing, feature extraction, model training, evaluation, and deployment.",
+  "emojiSuggestions": {
+    "A": "📊",
+    "B": "🧹",
+    "C": "🔍",
+    "D": "🧠",
+    "E": "📈",
+    "F": "❓",
+    "G": "🚀",
+    "H": "⚙️"
+  },
+  "visualRepresentation": {
+    "elements": [
+      {
+        "id": "A",
+        "type": "shape",
+        "text": "📊 Data Collection",
+        "position": {
+          "x": 1,
+          "y": 2,
+          "width": 2,
+          "height": 1
+        }
+      },
+      {
+        "id": "B",
+        "type": "shape",
+        "text": "🧹 Preprocessing",
+        "position": {
+          "x": 3.5,
+          "y": 2,
+          "width": 2,
+          "height": 1
+        }
+      },
+      {
+        "id": "connector_A_B",
+        "type": "connector",
+        "text": "",
+        "position": {
+          "x": 3,
+          "y": 2.5,
+          "width": 0.5,
+          "height": 0
+        }
+      }
+    ]
+  }
+}

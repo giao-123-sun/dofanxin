@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper to PowerPoint Flowchart Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs/dist/pptxgen.bundle.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .input-section, .output-section {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    
+    button {
+      background-color: #4472C4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    
+    button:hover {
+      background-color: #2E528F;
+    }
+    
+    .mermaid {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    
+    .summary {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+    
+    .emoji-suggestions {
+      margin-top: 20px;
+    }
+    
+    .flowchart-preview {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    
+    .node {
+      padding: 10px;
+      background-color: #4472C4;
+      color: white;
+      border-radius: 5px;
+      margin: 5px;
+      display: inline-block;
+    }
+    
+    .connector {
+      margin: 5px;
+      color: #2E528F;
+      font-weight: bold;
+    }
+    
+    h1, h2, h3 {
+      color: #333;
+    }
+    
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      background-color: #f5f5f5;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      border-radius: 5px 5px 0 0;
+      margin-right: 5px;
+    }
+    
+    .tab.active {
+      background-color: #4472C4;
+      color: white;
+    }
+    
+    .tab-content {
+      display: none;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 0 5px 5px 5px;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Paper to PowerPoint Flowchart Generator</h1>
+  
+  <div class="tabs">
+    <div class="tab active" data-tab="input">Input</div>
+    <div class="tab" data-tab="mermaid">Mermaid Flowchart</div>
+    <div class="tab" data-tab="ppt">PowerPoint Preview</div>
+  </div>
+  
+  <div class="tab-content active" id="input-tab">
+    <div class="container">
+      <div class="input-section">
+        <h2>Input Text</h2>
+        <p>Paste your paper text or upload a PDF file:</p>
+        <textarea id="paper-text" placeholder="Paste your paper text here...">Machine learning approaches have revolutionized natural language processing tasks. The typical workflow begins with data collection from various sources such as academic papers, social media, or specialized corpora. This data undergoes preprocessing to clean and normalize the text, including tokenization, removing stop words, and handling special characters. 
+
+Feature extraction follows, where meaningful representations are derived from the text using techniques like TF-IDF, word embeddings, or contextual embeddings from transformer models. These features serve as input to the model training phase, where algorithms like neural networks, decision trees, or support vector machines learn patterns from the data.
+
+After training, the model undergoes rigorous evaluation using metrics appropriate for the specific NLP task. If performance is satisfactory, the model is deployed for real-world use. Otherwise, hyperparameter tuning is performed to optimize the model's configuration, and the training process is repeated until acceptable performance is achieved.</textarea>
+        <input type="file" id="pdf-file" accept=".pdf" style="display: none;">
+        <button id="upload-pdf">Upload PDF</button>
+        <button id="generate-flowchart">Generate Flowchart</button>
+      </div>
+      
+      <div class="output-section">
+        <h2>Processing Status</h2>
+        <div id="status" class="summary">Ready to generate flowchart...</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-content" id="mermaid-tab">
+    <h2>Generated Mermaid Flowchart</h2>
+    <div class="summary" id="flowchart-summary"></div>
+    
+    <div class="container">
+      <div class="input-section">
+        <h3>Mermaid Code</h3>
+        <textarea id="mermaid-code" readonly></textarea>
+      </div>
+      
+      <div class="output-section">
+        <h3>Rendered Flowchart</h3>
+        <div class="mermaid" id="mermaid-diagram"></div>
+        
+        <div class="emoji-suggestions">
+          <h3>Emoji Suggestions</h3>
+          <ul id="emoji-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-content" id="ppt-tab">
+    <h2>PowerPoint Preview</h2>
+    
+    <div class="container">
+      <div class="input-section">
+        <h3>Flowchart Visualization</h3>
+        <div id="flowchart-preview" class="flowchart-preview"></div>
+      </div>
+      
+      <div class="output-section">
+        <h3>Adjustments</h3>
+        <p>Make adjustments to the flowchart:</p>
+        <button id="download-pptx">Download PowerPoint</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Initialize Mermaid
+    mermaid.initialize({ startOnLoad: false });
+    
+    // Mock data for testing
+    const mockFlowchartData = {
+      mermaid: `flowchart TD
+  A[Data Collection] --> B[Preprocessing]
+  B --> C[Feature Extraction]
+  C --> D[Model Training]
+  D --> E[Evaluation]
+  E --> F{Performance\\nSatisfactory?}
+  F -->|Yes| G[Deploy Model]
+  F -->|No| H[Hyperparameter Tuning]
+  H --> D`,
+      summary: "This flowchart represents the comprehensive machine learning approach for NLP tasks, showing the pipeline from data collection through preprocessing, feature extraction, model training, evaluation, and deployment.",
+      emojiSuggestions: {
+        "A": "📊",
+        "B": "🧹",
+        "C": "🔍",
+        "D": "🧠",
+        "E": "📈",
+        "F": "❓",
+        "G": "🚀",
+        "H": "⚙️"
+      },
+      visualRepresentation: {
+        elements: [
+          {
+            id: "A",
+            type: "shape",
+            text: "📊 Data Collection",
+            position: { x: 1, y: 2, width: 2, height: 1 }
+          },
+          {
+            id: "B",
+            type: "shape",
+            text: "🧹 Preprocessing",
+            position: { x: 3.5, y: 2, width: 2, height: 1 }
+          },
+          {
+            id: "connector_A_B",
+            type: "connector",
+            text: "",
+            position: { x: 3, y: 2.5, width: 0.5, height: 0 }
+          },
+          // ... more elements
+        ]
+      }
+    };
+    
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        
+        tab.classList.add('active');
+        document.getElementById(`${tab.dataset.tab}-tab`).classList.add('active');
+      });
+    });
+    
+    // Upload PDF button
+    document.getElementById('upload-pdf').addEventListener('click', () => {
+      document.getElementById('pdf-file').click();
+    });
+    
+    // PDF file selection
+    document.getElementById('pdf-file').addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        document.getElementById('status').textContent = `PDF selected: ${file.name}`;
+      }
+    });
+    
+    // Generate flowchart button
+    document.getElementById('generate-flowchart').addEventListener('click', async () => {
+      const statusElement = document.getElementById('status');
+      statusElement.textContent = 'Generating flowchart...';
+      
+      try {
+        // In a real implementation, we would call the API here
+        // For demo purposes, we'll use the mock data
+        setTimeout(() => {
+          statusElement.textContent = 'Flowchart generated successfully!';
+          
+          // Update the Mermaid tab
+          document.getElementById('flowchart-summary').textContent = mockFlowchartData.summary;
+          document.getElementById('mermaid-code').value = mockFlowchartData.mermaid;
+          
+          // Render the Mermaid diagram
+          const mermaidDiagram = document.getElementById('mermaid-diagram');
+          mermaidDiagram.innerHTML = mockFlowchartData.mermaid;
+          mermaid.init(undefined, mermaidDiagram);
+          
+          // Update emoji suggestions
+          const emojiList = document.getElementById('emoji-list');
+          emojiList.innerHTML = '';
+          Object.entries(mockFlowchartData.emojiSuggestions).forEach(([nodeId, emoji]) => {
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${nodeId}:</strong> ${emoji}`;
+            emojiList.appendChild(li);
+          });
+          
+          // Update PowerPoint preview
+          updateFlowchartPreview(mockFlowchartData.visualRepresentation);
+          
+          // Switch to the Mermaid tab
+          document.querySelector('.tab[data-tab="mermaid"]').click();
+        }, 1500);
+      } catch (error) {
+        statusElement.textContent = `Error: ${error.message}`;
+      }
+    });
+    
+    // Download PowerPoint button
+    document.getElementById('download-pptx').addEventListener('click', async () => {
+      const statusElement = document.getElementById('status');
+      statusElement.textContent = 'Generating PowerPoint file...';
+      
+      try {
+        // In a real implementation, we would call the API here
+        // For demo purposes, we'll generate a simple PowerPoint file
+        
+        // Create a new PowerPoint presentation
+        const pptx = new PptxGenJS();
+        
+        // Add a title slide
+        let slide = pptx.addSlide();
+        slide.addText(mockFlowchartData.summary, {
+          x: 0.5,
+          y: 1,
+          w: 9,
+          h: 1,
+          fontSize: 14
+        });
+        
+        // Add a flowchart slide
+        slide = pptx.addSlide();
+        slide.addText("Flowchart", {
+          x: 0.5,
+          y: 0.5,
+          fontSize: 24,
+          bold: true
+        });
+        
+        // Add flowchart elements
+        mockFlowchartData.visualRepresentation.elements.forEach(element => {
+          if (element.type === 'shape') {
+            // Create a rectangle shape with text
+            slide.addShape(pptx.ShapeType.RECTANGLE, {
+              x: element.position.x,
+              y: element.position.y,
+              w: element.position.width || 2,
+              h: element.position.height || 1,
+              fill: { color: '4472C4' },
+              line: { color: '2E528F', width: 1 },
+              color: 'FFFFFF',
+              fontSize: 12
+            });
+            
+            // Add text on top of the shape
+            slide.addText(element.text, {
+              x: element.position.x,
+              y: element.position.y,
+              w: element.position.width || 2,
+              h: element.position.height || 1,
+              color: 'FFFFFF',
+              fontSize: 12,
+              align: 'center',
+              valign: 'middle'
+            });
+          }
+        });
+        
+        // Save the PowerPoint file
+        pptx.writeFile({ fileName: 'flowchart.pptx' });
+        
+        statusElement.textContent = 'PowerPoint file downloaded!';
+      } catch (error) {
+        statusElement.textContent = `Error: ${error.message}`;
+      }
+    });
+    
+    // Update flowchart preview
+    function updateFlowchartPreview(visualRepresentation) {
+      const previewElement = document.getElementById('flowchart-preview');
+      previewElement.innerHTML = '';
+      
+      visualRepresentation.elements.forEach(element => {
+        if (element.type === 'shape') {
+          const nodeElement = document.createElement('div');
+          nodeElement.className = 'node';
+          nodeElement.textContent = element.text;
+          nodeElement.style.position = 'relative';
+          nodeElement.style.left = `${element.position.x * 30}px`;
+          nodeElement.style.top = `${element.position.y * 30}px`;
+          previewElement.appendChild(nodeElement);
+        } else if (element.type === 'connector') {
+          const connectorElement = document.createElement('div');
+          connectorElement.className = 'connector';
+          connectorElement.textContent = '→';
+          previewElement.appendChild(connectorElement);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
