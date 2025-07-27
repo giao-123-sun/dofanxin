@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const OPENROUTER_API_KEY = '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';
-const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1';
-const MODEL_NAME = 'google/gemini-2.5-flash-lite-preview-06-17';
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || (typeof import.meta !== 'undefined' && import.meta.env?.OPENROUTER_API_KEY);
+const OPENROUTER_API_URL = process.env.OPENROUTER_API_URL || (typeof import.meta !== 'undefined' && import.meta.env?.OPENROUTER_API_URL) || 'https://openrouter.ai/api/v1';
+const MODEL_NAME = process.env.OPENROUTER_MODEL || (typeof import.meta !== 'undefined' && import.meta.env?.OPENROUTER_MODEL) || 'google/gemini-2.5-flash-lite-preview-06-17';
 
 /**
  * Generate a Mermaid flowchart from paper text

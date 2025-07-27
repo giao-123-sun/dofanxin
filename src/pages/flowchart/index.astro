@@ -1,42 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import FlowchartApp from '../../components/flowchart/FlowchartApp.jsx';
+import FlowchartApp from '../../components/FlowchartApp';
 ---
 
-<Layout title="Paper to PowerPoint Flowchart Generator">
+<Layout title="智研图谱 - 论文流程图生成器">
   <main>
-    <h1>Paper to PowerPoint Flowchart Generator</h1>
-    <p class="description">
-      Upload a research paper (PDF) or paste text to automatically generate a PowerPoint presentation with a flowchart.
-    </p>
-    
     <FlowchartApp client:load />
   </main>
 </Layout>
 
 <style>
   main {
-    margin: auto;
-    padding: 1rem;
     width: 100%;
-    max-width: 1200px;
-    color: #333;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .description {
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #666;
-    font-size: 1.2rem;
+    min-height: 100vh;
+    background-color: #f7fafc;
   }
 </style>

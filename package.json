@@ -21,6 +21,7 @@
     "@astrojs/sitemap": "3.4.1",
     "astro": "5.10.1",
     "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
     "fastmcp": "^3.11.0",
     "mermaid": "^11.9.0",
     "openai": "^5.10.2",

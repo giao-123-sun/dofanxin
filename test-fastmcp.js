@@ -1,6 +1,5 @@
 
 import { FastMCP } from './src/lib/utils/fastmcp.js';
-import { parseMermaidFlowchart } from './src/lib/utils/mermaidParser.js';
 
 async function testFastMCP() {
   const mcp = new FastMCP();
@@ -15,39 +14,23 @@ async function testFastMCP() {
     fontSize: 14
   });
   
-  // Create a simplified flowchart for testing
-  const mermaidCode = `flowchart TD
-  A[Data Collection]
-  B[Preprocessing]
-  C[Feature Extraction]
-  D[Model Training]
-  A --> B
-  B --> C
-  C --> D`;
-  
-  const emojiMap = {
-    "A": "📊",
-    "B": "🧹",
-    "C": "🔍",
-    "D": "🧠"
-  };
-  
-  // Parse the Mermaid code to understand the structure
-  console.log('Parsing Mermaid code...');
-  const parsedFlowchart = parseMermaidFlowchart(mermaidCode);
-  console.log('Parsed flowchart:', JSON.stringify(parsedFlowchart, null, 2));
-  
   // Create a flowchart slide
-  console.log('Creating flowchart slide...');
   mcp.createSlide('Flowchart');
-  mcp.createFlowchartFromMermaid(mermaidCode, emojiMap);
+  mcp.createFlowchartFromMermaid(`flowchart TD
+  A[Data Collection] --> B[Preprocessing]
+  B --> C[Feature Extraction]
+  C --> D[Model Training]
+  D --> E[Evaluation]
+  E --> F{Performance\nSatisfactory?}
+  F -->|Yes| G[Deploy Model]
+  F -->|No| H[Hyperparameter Tuning]
+  H --> D`, {"A":"📊","B":"🧹","C":"🔍","D":"🧠","E":"📈","F":"❓","G":"🚀","H":"⚙️"});
   
   // Get the visual representation
   const visualRepresentation = mcp.getVisualRepresentation();
   console.log('Visual representation:', JSON.stringify(visualRepresentation, null, 2));
   
   // Generate the PowerPoint file
-  console.log('Generating PowerPoint file...');
   const pptxBuffer = await mcp.generateBuffer();
   
   // Save the PowerPoint file

@@ -1,0 +1,49 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nodes -->
+  <rect x="50" y="50" width="150" height="60" rx="5" fill="#4299E1" stroke="#2A4365" stroke-width="2"/>
+  <text x="125" y="85" font-family="Arial" font-size="16" fill="white" text-anchor="middle">📊 Data Collection</text>
+  
+  <rect x="325" y="50" width="150" height="60" rx="5" fill="#4299E1" stroke="#2A4365" stroke-width="2"/>
+  <text x="400" y="85" font-family="Arial" font-size="16" fill="white" text-anchor="middle">🧹 Preprocessing</text>
+  
+  <rect x="600" y="50" width="150" height="60" rx="5" fill="#4299E1" stroke="#2A4365" stroke-width="2"/>
+  <text x="675" y="85" font-family="Arial" font-size="16" fill="white" text-anchor="middle">🔍 Feature Extraction</text>
+  
+  <rect x="50" y="170" width="150" height="60" rx="5" fill="#4299E1" stroke="#2A4365" stroke-width="2"/>
+  <text x="125" y="205" font-family="Arial" font-size="16" fill="white" text-anchor="middle">🧠 Model Training</text>
+  
+  <rect x="325" y="170" width="150" height="60" rx="5" fill="#4299E1" stroke="#2A4365" stroke-width="2"/>
+  <text x="400" y="205" font-family="Arial" font-size="16" fill="white" text-anchor="middle">📈 Evaluation</text>
+  
+  <rect x="600" y="170" width="150" height="60" rx="5" fill="#4299E1" stroke="#2A4365" stroke-width="2"/>
+  <text x="675" y="190" font-family="Arial" font-size="16" fill="white" text-anchor="middle">❓ Performance</text>
+  <text x="675" y="210" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Satisfactory?</text>
+  
+  <rect x="325" y="290" width="150" height="60" rx="5" fill="#4299E1" stroke="#2A4365" stroke-width="2"/>
+  <text x="400" y="325" font-family="Arial" font-size="16" fill="white" text-anchor="middle">🚀 Deploy Model</text>
+  
+  <rect x="600" y="290" width="150" height="60" rx="5" fill="#4299E1" stroke="#2A4365" stroke-width="2"/>
+  <text x="675" y="325" font-family="Arial" font-size="16" fill="white" text-anchor="middle">⚙️ Hyperparameter Tuning</text>
+  
+  <!-- Arrows -->
+  <path d="M200 80 L325 80" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M475 80 L600 80" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M675 110 L675 170" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M600 200 L475 200" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M325 200 L200 200" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M125 170 L125 110" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M675 230 L675 290" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M600 320 L475 320" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M675 290 L675 230" stroke="#2A4365" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Text labels -->
+  <text x="675" y="260" font-family="Arial" font-size="14" fill="#2A4365" text-anchor="middle">Yes</text>
+  <text x="550" y="340" font-family="Arial" font-size="14" fill="#2A4365" text-anchor="middle">No</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2A4365"/>
+    </marker>
+  </defs>
+</svg>

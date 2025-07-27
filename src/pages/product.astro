@@ -1,0 +1,618 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="FlowMind AI - 产品展示">
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="gradient-text">FlowMind AI</span>
+              <br>智能论文流程图生成器
+            </h1>
+            <p class="hero-subtitle">
+              AI驱动的学术论文到PowerPoint流程图自动生成系统
+              <br>让复杂的研究流程一目了然
+            </p>
+            <div class="hero-buttons">
+              <a href="/flowchart" class="btn btn-primary">
+                🚀 立即体验
+              </a>
+              <a href="mailto:giao_giao@hotmail.com" class="btn btn-secondary">
+                📞 预约使用
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="demo-flowchart">
+              <div class="flowchart-node">📄 论文输入</div>
+              <div class="arrow">↓</div>
+              <div class="flowchart-node">🤖 AI分析</div>
+              <div class="arrow">↓</div>
+              <div class="flowchart-node">📊 流程图生成</div>
+              <div class="arrow">↓</div>
+              <div class="flowchart-node">💼 PowerPoint导出</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">🎯 核心特性</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>AI智能分析</h3>
+            <p>基于Google Gemini 2.5 Flash Lite的先进语言模型，智能理解论文结构和逻辑关系</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h3>多格式支持</h3>
+            <p>支持PDF文档上传和纯文本输入，灵活适应不同的使用场景</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>可视化增强</h3>
+            <p>自动添加相关表情符号，提升流程图的可读性和视觉吸引力</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💼</div>
+            <h3>专业输出</h3>
+            <p>生成高质量的PowerPoint演示文稿，符合学术和商业标准</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>实时调整</h3>
+            <p>支持流程图的实时预览和交互式调整，满足个性化需求</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>国际化</h3>
+            <p>支持中英文双语界面，服务全球学术研究社区</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+      <div class="container">
+        <h2 class="section-title">💰 定价方案</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card featured">
+            <div class="pricing-badge">🎁 推荐</div>
+            <h3>免费体验</h3>
+            <div class="price">¥0</div>
+            <div class="price-desc">首次使用</div>
+            <ul class="pricing-features">
+              <li>✅ 完整功能体验</li>
+              <li>✅ 生成1个流程图</li>
+              <li>✅ PowerPoint导出</li>
+              <li>✅ 技术支持</li>
+            </ul>
+            <a href="/flowchart" class="btn btn-primary">立即体验</a>
+          </div>
+          
+          <div class="pricing-card">
+            <h3>标准版</h3>
+            <div class="price">¥29</div>
+            <div class="price-desc">每次使用</div>
+            <ul class="pricing-features">
+              <li>✅ 所有基础功能</li>
+              <li>✅ 高质量输出</li>
+              <li>✅ 邮件支持</li>
+              <li>✅ 7天有效期</li>
+            </ul>
+            <a href="mailto:giao_giao@hotmail.com" class="btn btn-secondary">预约购买</a>
+          </div>
+          
+          <div class="pricing-card">
+            <h3>专业版</h3>
+            <div class="price">¥49</div>
+            <div class="price-desc">每次使用</div>
+            <ul class="pricing-features">
+              <li>✅ 高级定制选项</li>
+              <li>✅ 优先处理</li>
+              <li>✅ 专属客服</li>
+              <li>✅ 30天有效期</li>
+            </ul>
+            <a href="mailto:giao_giao@hotmail.com" class="btn btn-secondary">预约购买</a>
+          </div>
+          
+          <div class="pricing-card">
+            <h3>企业版</h3>
+            <div class="price">¥99</div>
+            <div class="price-desc">每次使用</div>
+            <ul class="pricing-features">
+              <li>✅ 批量处理</li>
+              <li>✅ API接入</li>
+              <li>✅ 定制开发</li>
+              <li>✅ 长期合作</li>
+            </ul>
+            <a href="mailto:giao_giao@hotmail.com" class="btn btn-secondary">联系洽谈</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="section-title">👨‍💻 关于作者</h2>
+            <div class="author-info">
+              <h3>Joey Sun</h3>
+              <div class="author-details">
+                <p>🏫 <strong>西湖大学</strong> (Westlake University)</p>
+                <p>📧 <a href="mailto:giao_giao@hotmail.com">giao_giao@hotmail.com</a></p>
+                <p>🐙 <a href="https://github.com/giao-123-sun" target="_blank">@giao-123-sun</a></p>
+              </div>
+              <p class="author-bio">
+                专注于AI驱动的学术工具开发，致力于通过技术创新提升研究效率。
+                FlowMind AI是在西湖大学学术环境下孕育的创新产品，
+                结合了最新的人工智能技术和深度的学术理解。
+              </p>
+            </div>
+          </div>
+          <div class="about-visual">
+            <div class="university-badge">
+              <div class="university-logo">🏛️</div>
+              <div class="university-info">
+                <h4>西湖大学</h4>
+                <p>Westlake University</p>
+                <p>学术支持</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section class="github">
+      <div class="container">
+        <div class="github-content">
+          <h2 class="section-title">🐙 开源项目</h2>
+          <div class="github-card">
+            <div class="github-info">
+              <h3>
+                <a href="https://github.com/giao-123-sun/dofanxin" target="_blank">
+                  giao-123-sun/dofanxin
+                </a>
+              </h3>
+              <p>FlowMind AI的完整源代码，包含前端界面、AI集成、PowerPoint生成等核心功能。</p>
+              <div class="github-stats">
+                <span class="stat">⭐ Stars</span>
+                <span class="stat">🍴 Forks</span>
+                <span class="stat">🐛 Issues</span>
+              </div>
+            </div>
+            <div class="github-actions">
+              <a href="https://github.com/giao-123-sun/dofanxin" target="_blank" class="btn btn-primary">
+                查看源码
+              </a>
+              <a href="https://github.com/giao-123-sun/dofanxin/issues" target="_blank" class="btn btn-secondary">
+                反馈问题
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>准备开始使用FlowMind AI？</h2>
+          <p>立即体验AI驱动的论文流程图生成，让您的研究展示更加专业高效</p>
+          <div class="cta-buttons">
+            <a href="/flowchart" class="btn btn-primary btn-large">
+              🚀 免费体验
+            </a>
+            <a href="mailto:giao_giao@hotmail.com" class="btn btn-secondary btn-large">
+              📞 预约咨询
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+  }
+
+  .btn-secondary:hover {
+    background: #667eea;
+    color: white;
+  }
+
+  .btn-large {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .gradient-text {
+    background: linear-gradient(45deg, #fff, #f0f8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .demo-flowchart {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+  }
+
+  .flowchart-node {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    font-weight: 600;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+
+  /* Features Section */
+  .features {
+    padding: 100px 0;
+    background: #f8f9fa;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+
+  /* Pricing Section */
+  .pricing {
+    padding: 100px 0;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .pricing-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .pricing-card.featured {
+    border: 3px solid #667eea;
+    transform: scale(1.05);
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #667eea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+
+  .price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+  }
+
+  .price-desc {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* About Section */
+  .about {
+    padding: 100px 0;
+    background: #f8f9fa;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .author-info h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .author-details {
+    margin-bottom: 2rem;
+  }
+
+  .author-details p {
+    margin-bottom: 0.5rem;
+  }
+
+  .author-details a {
+    color: #667eea;
+    text-decoration: none;
+  }
+
+  .author-bio {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .university-badge {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .university-logo {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .university-info h4 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  /* GitHub Section */
+  .github {
+    padding: 100px 0;
+  }
+
+  .github-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .github-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .github-info h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+  }
+
+  .github-info h3 a:hover {
+    color: #667eea;
+  }
+
+  .github-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .stat {
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  .github-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* CTA Section */
+  .cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-content,
+    .about-content,
+    .github-card {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-buttons,
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pricing-card.featured {
+      transform: none;
+    }
+  }
+</style>

@@ -2,100 +2,150 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="About - Paper to PowerPoint Flowchart Generator">
+<Layout title="关于智研图谱 - AI驱动的论文流程图自动生成工具">
   <main>
-    <section class="about-section">
-      <h1>About Our Project</h1>
+    <div class="about-container">
+      <h1>关于智研图谱</h1>
       
-      <div class="about-content">
-        <h2>What We Do</h2>
+      <section class="about-section">
+        <h2>项目简介</h2>
         <p>
-          Our Paper to PowerPoint Flowchart Generator is an AI-powered tool that automatically converts academic papers and text into structured PowerPoint presentations with flowcharts. We aim to save researchers, students, and professionals valuable time by automating the process of visualizing complex information.
+          智研图谱是一个基于人工智能的学术论文流程图自动生成工具，能够将复杂的研究论文或文本内容转化为清晰、专业的PowerPoint流程图。该工具利用先进的自然语言处理技术，自动识别文本中的关键流程和步骤，并生成符合学术标准的可视化图表。
         </p>
-        
-        <h2>How It Works</h2>
         <p>
-          Our system uses advanced AI models to analyze the content of research papers or text inputs. It identifies the main processes, methodologies, or frameworks described in the paper and generates a Mermaid flowchart representation. This flowchart is then enhanced with appropriate emojis and converted into a PowerPoint presentation that you can download and use.
+          我们的目标是帮助研究人员、学生和教育工作者更高效地理解和展示复杂的研究方法和流程，提高学术交流和知识传播的效率。
         </p>
-        
-        <h2>Technology Stack</h2>
+      </section>
+      
+      <section class="about-section">
+        <h2>核心功能</h2>
         <ul>
-          <li><strong>Frontend:</strong> Astro, React</li>
-          <li><strong>AI Processing:</strong> OpenRouter API with Gemini model</li>
-          <li><strong>Flowchart Generation:</strong> Mermaid.js</li>
-          <li><strong>PowerPoint Generation:</strong> pptxgenjs</li>
-          <li><strong>PDF Processing:</strong> pdf-parse</li>
+          <li><strong>论文解析</strong>: 支持PDF文件上传或直接文本输入，自动提取关键流程信息</li>
+          <li><strong>智能流程图生成</strong>: 使用先进的AI模型将文本转换为Mermaid格式的流程图</li>
+          <li><strong>表情符号增强</strong>: 自动为流程图节点添加相关的表情符号，提高可读性和视觉吸引力</li>
+          <li><strong>PowerPoint导出</strong>: 一键导出为专业的PowerPoint演示文稿</li>
+          <li><strong>可视化编辑</strong>: 直观的界面允许用户调整和优化生成的流程图</li>
         </ul>
-        
-        <h2>Future Enhancements</h2>
+      </section>
+      
+      <section class="about-section">
+        <h2>技术架构</h2>
         <p>
-          We're continuously working to improve our system. Future enhancements may include:
+          智研图谱采用现代Web技术和人工智能技术构建，主要包括：
         </p>
         <ul>
-          <li>Support for more complex diagram types</li>
-          <li>Enhanced customization options</li>
-          <li>Integration with reference management systems</li>
-          <li>Collaborative editing features</li>
-          <li>More presentation templates and styles</li>
+          <li><strong>前端</strong>: Astro, React, Mermaid.js</li>
+          <li><strong>后端</strong>: Node.js, OpenRouter API (Gemini 2.5 Flash Lite)</li>
+          <li><strong>PDF处理</strong>: pdf-parse</li>
+          <li><strong>PPT生成</strong>: pptxgenjs</li>
+          <li><strong>流程图处理</strong>: 自定义Mermaid解析器和FastMCP工具</li>
         </ul>
-      </div>
-    </section>
+      </section>
+      
+      <section class="about-section">
+        <h2>学术支持</h2>
+        <div class="academic-support">
+          <img src="/images/westlake_logo.svg" alt="西湖大学" class="university-logo">
+          <p>本项目得到西湖大学的学术支持，致力于推动科研成果的可视化和知识传播。</p>
+        </div>
+      </section>
+      
+      <section class="about-section">
+        <h2>联系我们</h2>
+        <div class="contact-info">
+          <p><strong>开发者</strong>: Joey Sun</p>
+          <p><strong>邮箱</strong>: giao_giao@hotmail.com</p>
+          <p><strong>GitHub</strong>: <a href="https://github.com/giao-123-sun/dofanxin">https://github.com/giao-123-sun/dofanxin</a></p>
+        </div>
+      </section>
+    </div>
   </main>
 </Layout>
 
 <style>
   main {
-    margin: auto;
-    padding: 1rem;
-    width: 100%;
-    max-width: 1000px;
-    color: #333;
-    font-size: 16px;
-    line-height: 1.6;
+    background-color: #f7fafc;
+    min-height: 100vh;
+    padding: 2rem 1rem;
   }
   
-  .about-section {
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
     background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     padding: 2rem;
-    margin: 2rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   h1 {
+    color: #2d3748;
     font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
     margin-bottom: 2rem;
-    color: #1f2937;
     text-align: center;
   }
   
+  .about-section {
+    margin-bottom: 3rem;
+  }
+  
   h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 2rem;
+    color: #2d3748;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #1f2937;
-    border-bottom: 2px solid #e5e7eb;
+    border-bottom: 2px solid #e2e8f0;
     padding-bottom: 0.5rem;
   }
   
   p {
-    margin-bottom: 1.5rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 1rem;
   }
   
   ul {
-    margin-bottom: 1.5rem;
     padding-left: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   li {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  strong {
+    color: #2d3748;
+  }
+  
+  .academic-support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .university-logo {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info {
+    background-color: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 0.375rem;
+  }
+  
+  .contact-info p {
     margin-bottom: 0.5rem;
   }
   
-  .about-content {
-    max-width: 800px;
-    margin: 0 auto;
+  .contact-info a {
+    color: #4299e1;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
   }
 </style>
