@@ -1,50 +1,356 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title="FlowMind AI - 智能论文流程图生成器">
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>FlowMind AI</h1>
+        <h2>智能论文流程图生成器</h2>
+        <p>
+          AI驱动的学术论文到PowerPoint流程图自动生成系统，让您的研究成果更加直观、专业
+        </p>
+        <div class="cta-buttons">
+          <a href="/product" class="cta-button primary">产品展示</a>
+          <a href="/flowchart" class="cta-button primary">立即体验</a>
+          <a href="/about" class="cta-button secondary">了解更多</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="features">
+      <h2>核心功能</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📄</div>
+          <h3>论文解析</h3>
+          <p>支持PDF文件上传或直接文本输入，自动提取关键流程信息。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>智能流程图生成</h3>
+          <p>使用先进的AI模型将文本转换为Mermaid格式的流程图。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">😀</div>
+          <h3>表情符号增强</h3>
+          <p>自动为流程图节点添加相关的表情符号，提高可读性和视觉吸引力。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>PowerPoint导出</h3>
+          <p>一键导出为专业的PowerPoint演示文稿，节省手动创建流程图的时间。</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="pricing">
+      <h2>定价方案</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>免费试用</h3>
+          <div class="price">¥0</div>
+          <ul>
+            <li>首次使用完全免费</li>
+            <li>体验所有核心功能</li>
+            <li>最多处理1篇论文</li>
+          </ul>
+          <a href="/flowchart" class="cta-button primary">立即试用</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>基础套餐</h3>
+          <div class="price">¥50</div>
+          <ul>
+            <li>10次使用额度</li>
+            <li>所有核心功能</li>
+            <li>优先处理</li>
+            <li>基础技术支持</li>
+          </ul>
+          <a href="/contact" class="cta-button primary">立即购买</a>
+        </div>
+        <div class="pricing-card">
+          <h3>专业套餐</h3>
+          <div class="price">¥200</div>
+          <ul>
+            <li>50次使用额度</li>
+            <li>所有高级功能</li>
+            <li>优先处理</li>
+            <li>专业技术支持</li>
+            <li>自定义模板</li>
+          </ul>
+          <a href="/contact" class="cta-button primary">立即购买</a>
+        </div>
+      </div>
+      <p class="appointment-note">要使用我们的服务，请通过官方网站预约。</p>
+    </section>
+    
+    <section class="academic-support">
+      <h2>学术支持</h2>
+      <img src="/images/westlake_logo.svg" alt="西湖大学" class="university-logo">
+      <p>本项目得到西湖大学的学术支持，致力于推动科研成果的可视化和知识传播。</p>
+    </section>
+    
+    <section class="contact">
+      <h2>联系我们</h2>
+      <div class="contact-info">
+        <p><strong>开发者</strong>: Joey Sun</p>
+        <p><strong>邮箱</strong>: giao_giao@hotmail.com</p>
+        <p><strong>GitHub</strong>: <a href="https://github.com/giao-123-sun/dofanxin">https://github.com/giao-123-sun/dofanxin</a></p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, #1a365d, #2a4365);
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  
+  .cta-button.primary {
+    background-color: #4299e1;
+    color: white;
+  }
+  
+  .cta-button.primary:hover {
+    background-color: #3182ce;
+    transform: translateY(-2px);
+  }
+  
+  .cta-button.secondary {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+  }
+  
+  .cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .features {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .features h2, .pricing h2, .academic-support h2, .contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1f2937;
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+  }
+  
+  .feature-card p {
+    color: #6b7280;
+  }
+  
+  /* Pricing Section */
+  .pricing {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .pricing-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .pricing-card.featured {
+    background-color: #ebf8ff;
+    border: 2px solid #4299e1;
+    transform: scale(1.05);
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pricing-card.featured:hover {
+    transform: translateY(-5px) scale(1.05);
+  }
+  
+  .pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+  }
+  
+  .pricing-card ul {
+    text-align: left;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+  }
+  
+  .pricing-card li {
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+  }
+  
+  .appointment-note {
+    text-align: center;
+    font-style: italic;
+    color: #718096;
+  }
+  
+  /* Academic Support Section */
+  .academic-support {
+    padding: 4rem 1rem;
+    background-color: #f7fafc;
+    text-align: center;
+  }
+  
+  .university-logo {
+    max-width: 200px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .academic-support p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4a5568;
+  }
+  
+  /* Contact Section */
+  .contact {
+    padding: 4rem 1rem;
+    background-color: #2d3748;
+    color: white;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    color: white;
+  }
+  
+  .contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-info p {
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info a {
+    color: #4299e1;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    .hero p {
+      font-size: 1rem;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .pricing-card.featured {
+      transform: none;
+    }
+    
+    .pricing-card.featured:hover {
+      transform: translateY(-5px);
+    }
+  }
+</style>

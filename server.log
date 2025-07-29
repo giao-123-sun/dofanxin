@@ -1,0 +1,18 @@
+
+> dev
+> astro dev --host 0.0.0.0 --port 12001
+
+17:14:37 [WARN] [adapter] Cloudflare does not support sharp at runtime. However, you can configure `imageService: "compile"` to optimize images with sharp on prerendered pages during build time.
+17:14:37 [types] Generated 0ms
+17:14:38 [content] Syncing content
+17:14:38 [content] Astro config changed
+17:14:38 [content] Clearing content store
+17:14:38 [content] Synced content
+17:14:38 [vite] Port 12001 is in use, trying another one...
+
+ astro  v5.10.1 ready in 1560 ms
+
+┃ Local    http://localhost:12002/
+┃ Network  http://10.2.10.10:12002/
+
+17:14:38 watching for file changes...

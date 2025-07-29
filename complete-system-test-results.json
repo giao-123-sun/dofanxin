@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-07-27T17:19:13.840Z",
+  "input": "\nDeep Learning for Natural Language Processing: A Comprehensive Survey\n\nAbstract:\nThis paper presents a comprehensive survey of deep learning techniques applied to natural language processing (NLP). W...",
+  "mermaidCode": "flowchart TD\n    A[📊 Data Collection] --> B[🔧 Preprocessing]\n    B --> C[🔍 Feature Extraction]\n    C --> D[🧠 Model Training]\n    D --> E[📈 Evaluation]\n    E --> F[⚙️ Hyperparameter Tuning]\n    F --> G[🚀 Deploy Model]\n    E --> H[❌ Poor Performance]\n    H --> F",
+  "summary": "This flowchart represents a typical deep learning pipeline for NLP, showing the iterative process from data collection to model deployment with feedback loops for optimization.",
+  "parsedNodes": 7,
+  "parsedConnections": 1,
+  "outputFile": "complete-system-test.pptx",
+  "status": "SUCCESS"
+}

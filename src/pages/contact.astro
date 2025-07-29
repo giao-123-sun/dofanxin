@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="联系我们 - 智研图谱">
+  <main>
+    <div class="contact-container">
+      <h1>联系我们</h1>
+      
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2>联系方式</h2>
+          <ul>
+            <li>
+              <strong>开发者:</strong> Joey Sun
+            </li>
+            <li>
+              <strong>邮箱:</strong> <a href="mailto:giao_giao@hotmail.com">giao_giao@hotmail.com</a>
+            </li>
+            <li>
+              <strong>GitHub:</strong> <a href="https://github.com/giao-123-sun/dofanxin" target="_blank">https://github.com/giao-123-sun/dofanxin</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="contact-form">
+          <h2>预约使用</h2>
+          <p>请填写以下表单预约使用我们的服务。我们会尽快与您联系。</p>
+          
+          <form id="appointment-form">
+            <div class="form-group">
+              <label for="name">姓名</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">邮箱</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="organization">组织/机构</label>
+              <input type="text" id="organization" name="organization">
+            </div>
+            
+            <div class="form-group">
+              <label for="package">套餐选择</label>
+              <select id="package" name="package">
+                <option value="free">免费试用</option>
+                <option value="basic">基础套餐 (¥50/10次)</option>
+                <option value="pro">专业套餐 (¥200/50次)</option>
+                <option value="enterprise">企业套餐 (定制)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">留言</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button">提交预约</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="academic-support">
+        <h2>学术支持</h2>
+        <img src="/images/westlake_logo.svg" alt="西湖大学" class="university-logo">
+        <p>本项目得到西湖大学的学术支持，致力于推动科研成果的可视化和知识传播。</p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  // Simple form submission handler
+  document.getElementById('appointment-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // In a real application, you would send this data to your server
+    // For demo purposes, we'll just show a success message
+    alert('感谢您的预约！我们会尽快与您联系。');
+    this.reset();
+  });
+</script>
+
+<style>
+  main {
+    background-color: #f7fafc;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  
+  .contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #2d3748;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #2d3748;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-info li {
+    margin-bottom: 1rem;
+    color: #4a5568;
+  }
+  
+  .contact-info a {
+    color: #4299e1;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-form p {
+    margin-bottom: 1.5rem;
+    color: #4a5568;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-weight: 500;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  
+  .submit-button {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .submit-button:hover {
+    background-color: #3182ce;
+  }
+  
+  .academic-support {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .university-logo {
+    max-width: 200px;
+    margin: 1.5rem auto;
+    display: block;
+  }
+  
+  .academic-support p {
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+</style>

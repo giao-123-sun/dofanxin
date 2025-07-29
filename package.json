@@ -16,9 +16,19 @@
   "dependencies": {
     "@astrojs/cloudflare": "12.6.0",
     "@astrojs/mdx": "4.3.0",
+    "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.4.1",
     "astro": "5.10.1",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "fastmcp": "^3.11.0",
+    "mermaid": "^11.9.0",
+    "openai": "^5.10.2",
+    "pdf-parse": "^1.1.1",
+    "pptxgenjs": "^4.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "typescript": "5.8.3"
   },
   "devDependencies": {

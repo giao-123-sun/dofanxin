@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FlowchartApp from '../../components/FlowchartApp';
+---
+
+<Layout title="智研图谱 - 论文流程图生成器">
+  <main>
+    <FlowchartApp client:load />
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f7fafc;
+  }
+</style>
